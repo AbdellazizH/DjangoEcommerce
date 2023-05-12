@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to HomePage !</h1>
+    {% for p in product %}
+        <h3>{{ p.name }}</h3>
+        <img src="{{ p.thumbnail.url }}" alt="{{ p.name }}" style="width: 250px; height: 250px">
+        <ul>
+            <li>{{ p.description }}</li>
+            <li>{{ p.price }}€</li>
+            <li>{{ p.stock }}</li>
+        </ul>
+
+
+    {% endfor %}
+
+{% endblock %}
